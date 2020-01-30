@@ -39,6 +39,31 @@ public class DB {
 		
 		
 	}
+	 /*hadi bdal la partie base w la classe evenement dir event kif ma 3andk*/
+        public ArrayList<Evenement> displayEvent() {
+		ArrayList <Evenement> o = new ArrayList<Evenement>();
+		try {
+		String sql = "select * from UNTITLED";  
+		Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+                Connection conn=DriverManager.getConnection("jdbc:derby://localhost:1527/DB","APP","azerty"); 
+	        Statement stmt=conn.createStatement();
+	        ResultSet r = stmt.executeQuery(sql);
+	        while(r.next()) {
+	        	Evenement event = new Evenement();
+	        	event.setId(r.getInt("idevent"));
+	        	event.setNom_event(r.getString("titre"));
+	        	event.setDescription(r.getString("description"));
+	        	
+	        	String image =event.blobToString(r.getBlob("image"));
+	        	event.setImage(image);
+	        	o.add(event);
+	        }
+		} catch(Exception e) {
+			
+		}
+		return o;
+	}
+
 	
 	
 
