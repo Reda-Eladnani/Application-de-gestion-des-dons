@@ -62,7 +62,7 @@ public class Evenement {
     }
 
  
-    /*hnaaa hadi baghadi tbadal walo*/
+    /*hnaaa maghadi tbadal walo*/
     public String blobToString(java.sql.Blob blob) throws SQLException, IOException {
 		java.io.InputStream inputStream = blob.getBinaryStream();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
