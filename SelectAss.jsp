@@ -33,7 +33,7 @@
           
             
           <li class="nav-item">
-            <a class="nav-link" href="SelectAss.jsp" >Déconnexion</a>
+            <a class="nav-link" href="Deconnecter" >Déconnexion</a>
           </li>
            
         </ul>
